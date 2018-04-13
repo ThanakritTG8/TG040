@@ -2,7 +2,7 @@ package OOP;
 
 import java.util.*;
 
-public abstract class wallet {
+public abstract class wallet extends selectMenu {
     
     public int p = 0;
          
@@ -20,6 +20,8 @@ class Point extends wallet{
     
     
     public void print(){
+        
+        super.print();
     
         Scanner yn = new Scanner(System.in);
         System.out.print("Do you want to fill point (Y/N) >> ");
@@ -42,3 +44,4 @@ class Point extends wallet{
     } 
 
 }
+

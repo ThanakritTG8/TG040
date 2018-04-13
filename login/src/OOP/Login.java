@@ -18,14 +18,14 @@ public class Login {
         
         do{
    
+            System.out.println("Please Login");
+            Scanner a = new Scanner(System.in);
+            System.out.print("id : ");
+            name = a.nextLine();
         
-        Scanner a = new Scanner(System.in);
-        System.out.print("id : ");
-        name = a.nextLine();
-        
-        System.out.print("pass : ");
-        pas = a.nextLine();
-        }while( (!(name.equals(id[0])) || !(pas.equals(pass[0]))) && (!(name.equals(id[1])) || !(pas.equals(pass[1])))
+            System.out.print("pass : ");
+            pas = a.nextLine();
+            }while( (!(name.equals(id[0])) || !(pas.equals(pass[0]))) && (!(name.equals(id[1])) || !(pas.equals(pass[1])))
                 && (!(name.equals(id[2])) || !(pas.equals(pass[2]))));
         
          
