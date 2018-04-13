@@ -2,26 +2,23 @@ package OOP;
 
 import java.util.*;
 
-public abstract class wallet extends selectMenu {
+ interface wallet  {
     
     public int p = 0;
          
     public abstract void point();
-    
-    public void print(){
-    
-        System.out.println("Your point is "+p+" Point" );
+
         
     }       
-}
 
-class Point extends wallet{
+
+class Point extends selectMenu implements wallet{
     
     
     
     public void print(){
         
-        super.print();
+        System.out.println("Your point is "+p+" Point" );
     
         Scanner yn = new Scanner(System.in);
         System.out.print("Do you want to fill point (Y/N) >> ");
@@ -30,13 +27,14 @@ class Point extends wallet{
         
         switch(n){
             case 'y': point();break;
-            case 'n': break;
-            default : print();break;
+            case 'n': super.print(); break;
+            default : System.out.println("\nPlease try again\n");print();break;
         
         }    
     }
     
     public void point(){
+        System.out.println("");
         
       
     

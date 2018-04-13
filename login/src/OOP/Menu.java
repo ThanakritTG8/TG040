@@ -45,12 +45,12 @@ class selectMenu extends Menu implements select {
     }
     public void Select(){
         
-        wallet w = new Point();
+        Point p = new Point();
                     
         switch(n){
             
             case 1 : break;
-            case 2 : w.print(); break;
+            case 2 : p.print(); break;
         
         }
     

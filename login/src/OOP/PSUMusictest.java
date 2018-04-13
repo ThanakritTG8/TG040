@@ -16,7 +16,7 @@ public class PSUMusictest {
         System.out.println("----------PSU MUSIC----------\n");
         Login l = new Login();
         l.login();
-        System.out.println("\n\t\tWelcome");
+        System.out.println("\n\t\t\tWelcome");
         Menu m = new selectMenu();
         m.print();
         
