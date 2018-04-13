@@ -8,9 +8,8 @@ class Point extends selectMenu implements wallet{
     
     public void print(){
         
-        System.out.println("Your money is "+m+" Bath");
-        System.out.println("Your point is "+p+" Point" );
-        Money();
+        System.out.print("Your money is "+m+" Bath");
+        System.out.println("\t\tYour point is "+p+" Point" );
     
         Scanner yn = new Scanner(System.in);
         System.out.print("Do you want to fill point (Y/N) >> ");
@@ -29,16 +28,24 @@ class Point extends selectMenu implements wallet{
     
     }
     
-    public void point(){
-        System.out.println("50+0  >>>>> 25\n" +
-                           "100+0 >>>>> 40\n" +
-                           "150+25 >>>> 60\n" +
-                           "200+50 >>>> 90\n" +
-                           "500+100 >>>> 150");
+    public int point(){
         
-      
-    
-    
+        int selectP ;
+        System.out.println("1: 50+0    >>>> 25 bath\n" +
+                           "2: 100+0   >>>> 40 bath\n" +
+                           "3: 150+25  >>>> 60 bath\n" +
+                           "4: 200+50  >>>> 90 bath\n" +
+                           "5: 500+100 >>>> 150 bath");
+        Scanner sel = new Scanner(System.in);
+        System.out.print("How many do you want? >>> ");
+        selectP = sel.nextInt();
+        
+        switch(selectP){
+            case 1 : break;
+        
+        }
+        
+        return p ;
     } 
 
 }
@@ -48,7 +55,7 @@ class Point extends selectMenu implements wallet{
     public int m = 0;
     public int p = 0;
          
-    public void point();
+    public int point();
     public void Money();
     
 
