@@ -2,16 +2,6 @@ package OOP;
 
 import java.util.*;
 
- interface wallet  {
-    
-    public int p = 0;
-         
-    public abstract void point();
-
-        
-    }       
-
-
 class Point extends selectMenu implements wallet{
     
     
@@ -42,4 +32,15 @@ class Point extends selectMenu implements wallet{
     } 
 
 }
+
+ interface wallet  {
+    
+    public int p = 0;
+         
+    public abstract void point();
+
+        
+    }       
+
+
 
