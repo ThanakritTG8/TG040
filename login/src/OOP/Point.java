@@ -4,6 +4,8 @@ import java.util.*;
 
 class Point extends selectMenu implements wallet{
     
+    int po[] = {50,100,175,250,600}; 
+    int mon[]= {25,40,60,90,150};
     
     
     public void print(){
@@ -42,6 +44,11 @@ class Point extends selectMenu implements wallet{
         
         switch(selectP){
             case 1 : break;
+            case 2 : break;
+            case 3 : break;
+            case 4 : break;
+            case 5 : break;
+            default: point();break;
         
         }
         
