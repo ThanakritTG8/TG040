@@ -1,63 +1,102 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package OOP;
 
-/**
- *
- * @author tgroc
- */
 import java.util.*;
-        
-public abstract class Menu {
-    
-    public abstract void print();
-    
-    public void menu(){
-    
-        System.out.println("\n1:Search    \t2:Point   \t3:Year    \t4:My List    \t5:OUT");
-    
-    } 
-    
-}
 
-interface select{
-
-    public void Select();
+class Menu{
     
-}
-
-class selectMenu extends Menu implements select {
+    String id ;
+    String password ;
+    String name ;
+    int index;
     
-    int n;
     
-    public void print(){
+    Scanner entchar = new Scanner(System.in);
+    private String input;
+    public String Access(){
         
-        super.menu();
+        System.out.println("----------PSU MUSIC----------\n");
+        String choose=null;
+        System.out.println("\n1: Register"
+                         + "\n2: Login"
+                         + "\n3: User as guess"
+                         + "\n0: Exit");
+        boolean notchoose=true;
         
-        Scanner s = new Scanner(System.in);
-        System.out.print("__");
-        n = s.nextInt();
-        Select();
-    
+        while(notchoose){
+            System.out.print(">>> ");
+            choose = entchar.nextLine();
+            switch(choose){
+                case"1":case"2":case"3":
+                case"0":notchoose=false;
+                break;
+                default:System.out.println("Try again.");
+            }
+        }
+        return choose;
     }
-    public void Select(){
+    
+    public boolean Register(){
         
-        Point p = new Point();
-                    
-        switch(n){
-            
-            case 1 : break;
-            case 2 : p.print(); break;
+        boolean sure = true;
+        System.out.print("ID: ");
+        id = entchar.nextLine();
+        System.out.print("Password: ");
+        password = entchar.nextLine();
+        System.out.print("Name: ");
+        name = entchar.nextLine();
+        System.out.print("Are you sure? (Y/N) >> ");
+        String Sure = entchar.nextLine();
         
+        if(!Sure.equalsIgnoreCase("Y"))
+            sure = false;
+        
+        
+
+    return sure;
+    }
+    
+    public boolean Login(ArrayList<Account> user){
+        
+        boolean access = false;
+        System.out.print("ID: ");
+        id = entchar.nextLine();
+        System.out.print("Password: ");
+        password = entchar.nextLine();
+        for(int index = 0;index<user.size();index++){
+            if(id.equals(user.get(index).id)&&password.equals(user.get(index).password)){
+                access=true;this.index=index;
+                user.get(index).welcome();
+            }
         }
     
+    return access;
+    }
+    public int getIndex(){
+        return this.index;
     }
     
+    public String mainMenu(){
+        String sel=null;
+        System.out.println("\n\n------------------Welcome------------------");
+        System.out.println("\n1:Search\t2:Point\t3:My List\t0:Log Out");
+        System.out.print("___");
+        boolean selecting=true;
+        while(selecting){
+        sel = entchar.nextLine();
+        
+        switch(sel){
+            case "1":case"2":case"3":
+            selecting=false;
+            break;
+            case"0":
+            selecting=false;
+                System.out.println("Loging Out.");
+            break;
+            default : System.out.println("Try again.");
+        }
+        }
+        return sel;
     }
 
     
-
-
+}

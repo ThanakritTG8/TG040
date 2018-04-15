@@ -9,19 +9,72 @@ package OOP;
  *
  * @author tgroc
  */
+import java.util.*;
 public class PSUMusictest {
     
+    static ArrayList <Account> UserAccess = new ArrayList();
+    
     public static void main(String[] args) {
-        
-        System.out.println("----------PSU MUSIC----------\n");
-        Login l = new Login();
-        l.login();
-        System.out.println("\n\t\t\tWelcome");
-        Menu m = new selectMenu();
-        m.print();
-        
-        
-        
+        Menu menu = new Menu();
+        String select=" ";
+        boolean enter;
+        boolean access_success=false;
+        boolean inprogram=true;
+        Account user_access=null;
+        do{
+            enter=true;
+            while(enter){
+
+                switch(menu.Access()){
+                    case"1":
+                        if(menu.Register()){
+                            Account user = new User(menu.id,menu.password,menu.name);
+                            UserAccess.add(user);
+                        }
+                        enter=false;
+                    break;
+                    case"2":
+                        if(menu.Login(UserAccess)){
+                            user_access=UserAccess.get(menu.getIndex());
+                            access_success=true;
+                        }else
+                            System.out.println("access fail.");
+                        enter = false;
+                     break;
+                    case"3":
+                        user_access=new Guess();
+                        access_success=true;
+                        enter = false;  
+                        break;
+                    case"0":enter=false;
+                    inprogram = false ;break;
+                }
+            }
+       
+            while(access_success){
+                switch(menu.mainMenu()){
+                    case"1":System.out.println("Search");break;
+                    case"2":System.out.println("Point");
+                        
+                            if(user_access!=null&&user_access.permission){
+                            
+                            }else
+                        System.out.println("You have to register or login.");
+                    break;
+                    
+                    case"3":System.out.println("My List");
+                    if(user_access!=null&&user_access.permission){
+                            
+                    }else
+                        System.out.println("You have to register or login.");
+                    
+                    break;
+                    case"0":System.out.println("Log Out");
+                    access_success = false;break;
+                   
+                }
+            }
+        }while(inprogram);
     }
     
 }

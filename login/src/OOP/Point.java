@@ -1,17 +1,20 @@
 package OOP;
 
 import java.util.*;
-
+/*
 class Point extends selectMenu implements wallet{
-    
-    int po[] = {50,100,175,250,600}; 
-    int mon[]= {25,40,60,90,150};
+     
+    public int m = 0;
+    public int p = 0;
+    public int po[] = {50,100,175,250,600}; 
+    public int mon[]= {25,40,60,90,150};
     
     
     public void print(){
         
-        System.out.print("Your money is "+m+" Bath");
-        System.out.println("\t\tYour point is "+p+" Point" );
+        
+        System.out.print("Your money is "+this.Money+" Bath");
+        System.out.println("\t\tYour point is "+this.point+" Point" );
     
         Scanner yn = new Scanner(System.in);
         System.out.print("Do you want to fill money or point(m/p) >> ");
@@ -27,12 +30,18 @@ class Point extends selectMenu implements wallet{
     
     public void Money(){
         
-        System.out.println("How many do you want to fill? >>>");
+        Scanner enter = new Scanner(System.in);
+        System.out.print("How many do you want to fill? >>>");
+        this.Money = enter.nextInt();
     
     
     }
     
-    public int point(){
+    public int getMoney(){
+        return this.Money;
+    
+    }
+    public void point(){
         
         int selectP ;
         System.out.println("1: 50+0    >>>> 25 bath\n" +
@@ -44,32 +53,20 @@ class Point extends selectMenu implements wallet{
         System.out.print("How many do you want? >>> ");
         selectP = sel.nextInt();
         
-        switch(selectP){
-            case 1 : break;
-            case 2 : break;
-            case 3 : break;
-            case 4 : break;
-            case 5 : break;
-            default: point();break;
-        
         }
-        
-        return p ;
+
     } 
 
-}
+
 
  interface wallet  {
-     
-    public int m = 0;
-    public int p = 0;
-         
-    public int point();
+              
+    public void point();
     public void Money();
     
 
         
     }       
 
-
+*/
 
