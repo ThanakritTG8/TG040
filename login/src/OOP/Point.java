@@ -14,18 +14,20 @@ class Point extends selectMenu implements wallet{
         System.out.println("\t\tYour point is "+p+" Point" );
     
         Scanner yn = new Scanner(System.in);
-        System.out.print("Do you want to fill point (Y/N) >> ");
+        System.out.print("Do you want to fill money or point(m/p) >> ");
         String y = yn.nextLine();
         char n = y.charAt(0);
         
         switch(n){
-            case 'y': point();break;
-            case 'n': super.print(); break;
+            case 'm': Money();break;
+            case 'p': point(); break;
             default : System.out.println("\nPlease try again\n");print();break;     
         }    
     }
     
     public void Money(){
+        
+        System.out.println("How many do you want to fill? >>>");
     
     
     }
