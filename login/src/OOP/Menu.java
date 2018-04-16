@@ -11,7 +11,9 @@ class Menu{
     
     
     Scanner entchar = new Scanner(System.in);
+    
     private String input;
+    
     public String Access(){
         
         System.out.println("----------PSU MUSIC----------\n");
@@ -25,7 +27,9 @@ class Menu{
         while(notchoose){
             System.out.print(">>> ");
             choose = entchar.nextLine();
+            
             switch(choose){
+                
                 case"1":case"2":case"3":
                 case"0":notchoose=false;
                 break;
@@ -40,10 +44,13 @@ class Menu{
         boolean sure = true;
         System.out.print("ID: ");
         id = entchar.nextLine();
+        
         System.out.print("Password: ");
         password = entchar.nextLine();
+        
         System.out.print("Name: ");
         name = entchar.nextLine();
+        
         System.out.print("Are you sure? (Y/N) >> ");
         String Sure = entchar.nextLine();
         
@@ -62,9 +69,13 @@ class Menu{
         id = entchar.nextLine();
         System.out.print("Password: ");
         password = entchar.nextLine();
+        
         for(int index = 0;index<user.size();index++){
+            
             if(id.equals(user.get(index).id)&&password.equals(user.get(index).password)){
+                
                 access=true;this.index=index;
+                
                 user.get(index).welcome();
             }
         }
@@ -76,18 +87,25 @@ class Menu{
     }
     
     public String mainMenu(){
+        
         String sel=null;
+        
         System.out.println("\n\n------------------Welcome------------------");
         System.out.println("\n1:Search\t2:Point\t3:My List\t0:Log Out");
         System.out.print("___");
-        boolean selecting=true;
+        
+        boolean selecting = true;
+        
         while(selecting){
+            
         sel = entchar.nextLine();
         
         switch(sel){
+            
             case "1":case"2":case"3":
             selecting=false;
             break;
+            
             case"0":
             selecting=false;
                 System.out.println("Loging Out.");

@@ -23,9 +23,9 @@ public abstract class Account {
     Account(){
         this.permission = false;
         
-        
-        
     }
+    
+    
     Account(String id , String password , String name){
         
         this.permission = true;
@@ -35,12 +35,14 @@ public abstract class Account {
     
     }
     public abstract void welcome();
+    
     public void setPoint(int point){
         this.point += point;
         
     }
     
     public void setMoney(int Money){
+        this.Money += Money;
     
     }
 }

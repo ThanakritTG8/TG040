@@ -21,6 +21,8 @@ public class PSUMusictest {
         boolean access_success=false;
         boolean inprogram=true;
         Account user_access=null;
+        
+        Wallet p = new Wallet();
         do{
             enter=true;
             while(enter){
@@ -53,28 +55,30 @@ public class PSUMusictest {
        
             while(access_success){
                 switch(menu.mainMenu()){
+                    
                     case"1":System.out.println("Search");break;
-                    case"2":System.out.println("Point");
-                        
+                    case"2":
                             if(user_access!=null&&user_access.permission){
+                                p.select();
                             
-                            }else
-                        System.out.println("You have to register or login.");
-                    break;
-                    
-                    case"3":System.out.println("My List");
-                    if(user_access!=null&&user_access.permission){
-                            
-                    }else
-                        System.out.println("You have to register or login.");
-                    
-                    break;
-                    case"0":System.out.println("Log Out");
-                    access_success = false;break;
-                   
+                            }else{
+                            System.out.println("You have to register or login.");}
+                        break;
+
+                        case"3":System.out.println("My List");
+                        if(user_access!=null&&user_access.permission){
+
+                        }else
+                            System.out.println("You have to register or login.");
+
+                        break;
+                        
+                        case"0":System.out.println("Log Out");
+                        access_success = false;break;
+
+                    }
                 }
-            }
-        }while(inprogram);
+            }while(inprogram);
+        }
+
     }
-    
-}

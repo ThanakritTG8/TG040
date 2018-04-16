@@ -15,10 +15,11 @@ public class User extends Account {
     
     ArrayList <Music> music = new ArrayList();
     User(String id , String password , String name){
+        
         super(id,password,name);
     }
     public void welcome(){
-        System.out.println("Welcome to PSU Music");
+        System.out.println("Welcome to PSU Music "+name);
     }
     
 }
