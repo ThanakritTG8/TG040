@@ -16,6 +16,7 @@ class Wallet{
     int point;
     int bath;
     
+    Menu menu = new Menu();
     Account a = new User(id , password , name) ;
     
     public void select(){
@@ -55,7 +56,8 @@ class Wallet{
                            "2: 100+0   >>>> 40 bath\n" +
                            "3: 150+25  >>>> 60 bath\n" +
                            "4: 200+50  >>>> 90 bath\n" +
-                           "5: 500+100 >>>> 150 bath");
+                           "5: 500+100 >>>> 150 bath\n"+
+                           "0: Main menu.");
         System.out.print("\nHow many do you chooese>> ");
         choz = entChar.nextLine();
         
@@ -68,10 +70,42 @@ class Wallet{
                     System.out.println("Your money is "+a.Money);break;
                 }
                 else if((a.Money-25)<0){
-                    System.out.println("Money not enough.");
-                    select = false;
+                    System.out.println("\nMoney not enough.");     
                 }
-            
+            case "2":
+                if((a.Money-40)>=0){
+                    System.out.println("Your point is "+a.point);
+                    System.out.println("Your money is "+a.Money);break;
+                }
+                else if((a.Money-40)<0){
+                    System.out.println("\nMoney not enough.");     
+                }
+            case "3":
+                if((a.Money-60)>=0){
+                    System.out.println("Your point is "+a.point);
+                    System.out.println("Your money is "+a.Money);break;
+                }
+                else if((a.Money-60)<0){
+                    System.out.println("\nMoney not enough.");     
+                }
+            case "4":
+                if((a.Money-90)>=0){
+                    System.out.println("Your point is "+a.point);
+                    System.out.println("Your money is "+a.Money);break;
+                }
+                else if((a.Money-90)<0){
+                    System.out.println("\nMoney not enough.");     
+                }    
+            case "5":
+                if((a.Money-150)>=0){
+                    System.out.println("Your point is "+a.point);
+                    System.out.println("Your money is "+a.Money);break;
+                }
+                else if((a.Money-150)<0){
+                    System.out.println("\nMoney not enough.");     
+                }
+            case "0": menu.mainMenu();
+                        select = false;
         }}
     return a.point;
     }
