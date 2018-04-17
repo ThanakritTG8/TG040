@@ -26,14 +26,11 @@ class Wallet{
         
         boolean choose = true;
         
-//        while(choose){
+
         switch(select_MP){
             case "m": Money(); break;
             case "p": point(); break; 
             default : System.out.println("Try again.");break;
-             
-//        
-//        }
         }
     }
     
