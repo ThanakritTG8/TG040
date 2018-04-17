@@ -50,8 +50,7 @@ class Wallet{
     }
     
     public int point(){
-        boolean select = true;
-        
+
         System.out.println("1: 50+0    >>>> 25 bath\n" +
                            "2: 100+0   >>>> 40 bath\n" +
                            "3: 150+25  >>>> 60 bath\n" +
@@ -61,11 +60,11 @@ class Wallet{
         System.out.print("\nHow many do you chooese>> ");
         choz = entChar.nextLine();
         
-        while(select){
+        
         switch(choz){
             case "1": 
                 if((a.Money-25)>=0){ 
-                    
+                    a.point+=50; a.Money-=25;
                     System.out.println("Your point is "+a.point);
                     System.out.println("Your money is "+a.Money);break;
                 }
@@ -104,9 +103,10 @@ class Wallet{
                 else if((a.Money-150)<0){
                     System.out.println("\nMoney not enough.");     
                 }
-            case "0": menu.mainMenu();
-                        select = false;
-        }}
+            case "0": menu.mainMenu(); break;
+            default : point(); break;
+                        
+        }
     return a.point;
     }
 
