@@ -12,9 +12,11 @@ package OOP;
 import java.util.*;
 public class PSUMusictest {
     
+    
     static ArrayList <Account> UserAccess = new ArrayList();
     
     public static void main(String[] args) {
+        Search search = new Search();
         Menu menu = new Menu();
         String select=" ";
         boolean enter;
@@ -56,7 +58,7 @@ public class PSUMusictest {
             while(access_success){
                 switch(menu.mainMenu()){
                     
-                    case"1":System.out.println("Search");break;
+                    case"1":search.Arraylist();break;
                     case"2":
                             if(user_access!=null&&user_access.permission){
                                 p.select(user_access);
