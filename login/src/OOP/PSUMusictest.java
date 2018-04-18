@@ -79,7 +79,7 @@ public class PSUMusictest {
                         access_success = false;break;
 
                     }
-                }
+            }
             }while(inprogram);
         }
 

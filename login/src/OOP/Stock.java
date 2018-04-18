@@ -189,4 +189,7 @@ abstract class Stock {
     public abstract void mylistdemo();
     public abstract void getmoneydemo();
     public abstract void outdemo();
+
+
+
 }
