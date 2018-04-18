@@ -59,7 +59,7 @@ public class PSUMusictest {
                     case"1":System.out.println("Search");break;
                     case"2":
                             if(user_access!=null&&user_access.permission){
-                                p.select();
+                                p.select(user_access);
                             
                             }else{
                             System.out.println("You have to register or login.");}
