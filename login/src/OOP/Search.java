@@ -58,5 +58,15 @@ System.out.print("Do you want return to find music : (Y/N)");
     public  void mylistdemo(){}
     public  void getmoneydemo(){}
     public  void outdemo(){}
+
+
+
+
+
+
+
+
+
+
 }
 
