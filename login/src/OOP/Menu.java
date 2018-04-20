@@ -20,7 +20,7 @@ class Menu{
         String choose=null;
         System.out.println("\n1: Register"
                          + "\n2: Login"
-                         + "\n3: User as guess"
+                         + "\n3: Use for free"
                          + "\n0: Exit");
         boolean notchoose=true;
         
@@ -90,8 +90,9 @@ class Menu{
         
         String sel=null;
         
-        System.out.println("\n\n------------------Welcome------------------");
-        System.out.println("\n1:Search\t2:Point\t3:My List\t0:Log Out");
+        System.out.println("------------------------------------------------------");
+        System.out.println("1:Search\t2:Point\t3:My List\t0:Log Out");
+        System.out.println("------------------------------------------------------");
         System.out.print("___");
         
         boolean selecting = true;

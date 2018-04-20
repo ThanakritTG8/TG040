@@ -94,9 +94,9 @@ public class Search implements MusicStock{
                                 }else
                                     System.out.println("try again.");
                             }else if(musicsList.get(index).getbuy())
-                                System.out.println("this's free music");
+                                System.out.println("\nthis's free music");
                             else
-                                System.out.println("Your money not point");
+                                System.out.println("\nYour point not enough");
                           break;
                         case"0":inplay=false;
                          
