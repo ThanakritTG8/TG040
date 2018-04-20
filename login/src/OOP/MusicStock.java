@@ -11,7 +11,7 @@ package OOP;
  */
 public interface MusicStock {
     String free_music[]={"closer","havana","weareyoung"};
-    String vip_music[]={"photograph","chalala","kuy","Heyheye"};
+    String vip_music[]={"photograph","chalala","Suga","Happy"};
     int price_musics[]={100,100,1,40};
     
 }

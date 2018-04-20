@@ -39,7 +39,7 @@ public class PSUMusictest {
                         enter = false;
                      break;
                     case"3":
-                        user_access=new Guess();
+                        user_access = new Guess();
                         access_success=true;
                         enter = false;  
                         break;

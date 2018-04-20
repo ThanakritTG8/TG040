@@ -16,12 +16,12 @@ class Menu{
     
     public String Access(){
         
-        System.out.println("----------PSU MUSIC----------\n");
+        System.out.println("------------------PSU MUSIC------------------\n");
         String choose=null;
-        System.out.println("\n1: Register"
-                         + "\n2: Login"
-                         + "\n3: Use for free"
-                         + "\n0: Exit");
+        System.out.println("\t\n1: Register"
+                         + "\t\n2: Login"
+                         + "\t\n3: Use for free"
+                         + "\t\n0: Exit");
         boolean notchoose=true;
         
         while(notchoose){
@@ -74,12 +74,12 @@ class Menu{
             
             if(id.equals(user.get(index).id)&&password.equals(user.get(index).password)){
                 
-                access=true;this.index=index;
-                
+                access=true;
+                this.index=index;       
                 user.get(index).welcome();
             }
         }
-    
+
     return access;
     }
     public int getIndex(){

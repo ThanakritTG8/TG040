@@ -111,7 +111,7 @@ public class Search implements MusicStock{
     
    public void PlayList(){
        for(int i=0;i<musicsList.size();i++){
-       System.out.println(musicsList.get(i).getname());
+       System.out.println("\n"+musicsList.get(i).getname()+"\n");
        
    } 
    }
