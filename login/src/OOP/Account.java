@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package OOP;
 
-/**
- *
- * @author tgroc
- */
 import java.util.*;
 public abstract class Account {
     
@@ -18,7 +10,7 @@ public abstract class Account {
     int point;
     int Money;
     boolean permission;
-    
+  
     
     Account(){
         this.permission = false;
@@ -32,6 +24,7 @@ public abstract class Account {
         this.id = id;
         this.password = password;
         this.name = name;
+      
     
     }
     public abstract void welcome();
@@ -45,4 +38,10 @@ public abstract class Account {
         this.Money += Money;
     
     }
+//    public void setmylist(String list){
+//        this.list.equals(list);
+//        
+//    }
+
+
 }

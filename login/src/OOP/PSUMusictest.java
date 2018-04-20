@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package OOP;
 
-/**
- *
- * @author tgroc
- */
 import java.util.*;
 public class PSUMusictest {
     
@@ -67,6 +59,7 @@ public class PSUMusictest {
                             System.out.println("You have to register or login.");}
                         break;
 
+        
                         case"3":System.out.println("My List");
                         if(user_access!=null&&user_access.permission){
 
