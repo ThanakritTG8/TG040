@@ -24,7 +24,7 @@ public class User extends Account {
     public boolean checkList(String music_name){
         boolean check=false;
         for(int i =0;i<music.size();i++){
-            if(music.get(i).equals(music_name))
+            if(music.get(i).getname().equals(music_name))
                 check=true;
         }
         return check;
