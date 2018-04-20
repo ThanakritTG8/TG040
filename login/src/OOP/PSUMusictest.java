@@ -35,7 +35,7 @@ public class PSUMusictest {
                             user_access=UserAccess.get(menu.getIndex());
                             access_success=true;
                         }else
-                            System.out.println("access fail.");
+                            System.out.println("access fail!.");
                         enter = false;
                      break;
                     case"3":

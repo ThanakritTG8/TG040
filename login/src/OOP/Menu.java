@@ -16,7 +16,7 @@ class Menu{
     
     public String Access(){
         
-        System.out.println("------------------PSU MUSIC------------------\n");
+        System.out.println("\n------------------PSU MUSIC------------------");
         String choose=null;
         System.out.println("\t\n1: Register"
                          + "\t\n2: Login"
@@ -42,7 +42,7 @@ class Menu{
     public boolean Register(){
         
         boolean sure = true;
-        System.out.print("ID: ");
+        System.out.print("\nID: ");
         id = entchar.nextLine();
         
         System.out.print("Password: ");
@@ -65,7 +65,7 @@ class Menu{
     public boolean Login(ArrayList<Account> user){
         
         boolean access = false;
-        System.out.print("ID: ");
+        System.out.print("\nID: ");
         id = entchar.nextLine();
         System.out.print("Password: ");
         password = entchar.nextLine();
@@ -90,9 +90,9 @@ class Menu{
         
         String sel=null;
         
-        System.out.println("------------------------------------------------------");
-        System.out.println("1:Search\t2:Point\t3:My List\t0:Log Out");
-        System.out.println("------------------------------------------------------");
+        System.out.println("----------------------------------------------------------");
+        System.out.println("1:Search\t2:Point\t\t3:My List\t0:Log Out");
+        System.out.println("----------------------------------------------------------");
         System.out.print("___");
         
         boolean selecting = true;

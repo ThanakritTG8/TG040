@@ -42,15 +42,16 @@ public class Search implements MusicStock{
             song_name = sn.nextLine();
             boolean notfound=true;
             if(song_name.equalsIgnoreCase("L")){
+            System.out.println("\n---------------------Music List-----------------------");
                 PlayList();
-                
+            System.out.println("--------------------------------------------------------\n");
             }else if(song_name.equalsIgnoreCase("E")){
             inprocess =false;
             
             }else{
                 for(int i=0;i<musicsList.size()&&notfound;i++){
                     if(musicsList.get(i).getname().equalsIgnoreCase(song_name)){
-                        System.out.println("-----------Found! :"+musicsList.get(i).getname()+"-----------");
+                        System.out.println("-----------------------Found! :"+musicsList.get(i).getname()+"-----------------------");
                         notfound=false;
                         index=i;
                     }
@@ -69,11 +70,11 @@ public class Search implements MusicStock{
                         case"1":
                             
                             if(musicsList.get(index).getbuy()||user.permission&&canplay){
-                                System.out.println("Playing "
-                                        +musicsList.get(index).getname());
+                                System.out.println("-----------------------Playing "
+                                        +musicsList.get(index).getname()+"-----------------------");
                                 
                             }else{
-                                System.out.println("you have to buy before play");
+                                System.out.println("you have to buy before play!");
                             }
                          break;
                         case"B":case"b":
@@ -92,11 +93,11 @@ public class Search implements MusicStock{
                                     user.setPoint(-musicsList.get(index).getprice());
                                     user.addMusic(musicsList.get(index));
                                 }else
-                                    System.out.println("-----try again.-----");
+                                    System.out.println("-----try again!-----");
                             }else if(musicsList.get(index).getbuy())
-                                System.out.println("\nthis's free music");
+                                System.out.println("this's free music!");
                             else
-                                System.out.println("\nYour point not enough");
+                                System.out.println("Your point not enough!");
                           break;
                         case"0":inplay=false;
                          
@@ -108,11 +109,9 @@ public class Search implements MusicStock{
     
     
     }
-    
    public void PlayList(){
        for(int i=0;i<musicsList.size();i++){
-       System.out.println("\n"+musicsList.get(i).getname()+"\n");
-       
+       System.out.println(musicsList.get(i).getname());
    } 
    }
     

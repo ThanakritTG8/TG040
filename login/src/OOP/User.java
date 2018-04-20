@@ -19,7 +19,7 @@ public class User extends Account {
         super(id,password,name);
     }
     public void welcome(){
-        System.out.println("\n\n----------------Welcome to PSU Music "+name+"----------------");
+        System.out.println("\n\n-----------------Welcome to PSU Music "+name+"-----------------");
     }
     public boolean checkList(String music_name){
         boolean check=false;
