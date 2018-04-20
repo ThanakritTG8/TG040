@@ -2,117 +2,123 @@
 package OOP;
 import java.util.Scanner;
 import java.util.ArrayList;
-public class Search extends Stock{
-  
-
-static Scanner sd = new Scanner(System.in);
-static ArrayList you = new ArrayList();
-static String df,po;
-static String cho;
-String mus1;
-
-Account mylistt;
-    buy music;
-public static void Arraylist(){
-  you.add(closer);
-  you.add(havana);
-  you.add(weareyoung);
-tees();
-dfg();
-
-}
-
-public static void tees(){ 
+public class Search implements MusicStock{
+    ArrayList<Music> musicsList = new ArrayList();
+    Scanner sc=new Scanner(System.in);
+    Search(){
+        this.addMusicToStore();
+        
+    }
+    private void addMusicToStore(){
+        Music music;
+        int amount;
+        //add free and vip music
+        if(free_music.length>vip_music.length)
+            amount=free_music.length;
+        else
+            amount=vip_music.length;
+        
+        for(int i=0;i<amount;i++){
+            if(i<free_music.length){
+                music=new FreeMusic(free_music[i]);
+                this.musicsList.add(music);
+            }
+            if(i<vip_music.length){
+                music=new VipMusic(vip_music[i],price_musics[i]);
+                this.musicsList.add(music);
+            }
+        }
     
-          do{
-             System.out.println("Song name  ");
-              df = sd.nextLine();
-           
-              if(df.equals("closer")){
-                  System.out.println("----------------------------------------------------");
-                  System.out.println("Closer");
-                  do{ 
-                  System.out.print(" 1 : play now\n"
-                          + " 2 : buy now\n"
-                          + " 3 : back to search\n");
-                  System.out.print("Choose number : ");
-                  cho = sd.nextLine();
-                  switch(cho){
-                      case "1" :  System.out.println(you.get(0)); break;
-                      case "2" :  break;
-                      case "3" :  tees();
-                                break;
-                  }
-                 }while(cho.equals("1")||cho.equals("2")||cho.equals("3"));
-                  
-               
-    }else if(df.equals("havana")){
-                  System.out.println("----------------------------------------------------");
-                  System.out.println("havana");
-                  do{ 
-                  System.out.print(" 1 : play now\n"
-                          + " 2 : buy now\n"
-                          + " 3 : back to search\n");
-                  System.out.print("Choose number : ");
-                  cho = sd.nextLine();
-                  switch(cho){
-                      case "1" : System.out.println(you.get(1)); break;
-                      case "2" :  break;
-                      case "3" :  tees();
-                                break;
-                  }
-                 }while(cho.equals("1")||cho.equals("2")||cho.equals("3"));
-    }else if(df.equals("weareyoung")){
-                  System.out.println("----------------------------------------------------");
-                  do{ 
-                  System.out.print(" 1 : play now\n"
-                          + " 2 : buy now\n"
-                          + " 3 : back to search\n");
-                  System.out.print("Choose number : ");
-                cho = sd.nextLine();
-                  switch(cho){
-                      case "1" : System.out.println(you.get(2)); break;
-                      case "2" :  break;
-                      case "3" :  tees();break;
-                                
-                  }
-                 }while(cho.equals("1")||cho.equals("2")||cho.equals("3"));
-    }else {System.out.println("not find");}
-           }while(!(df.equals("closer"))&&!(df.equals("havana"))&&!(df.equals("weareyoung")));
-           
-}   
-    public static void dfg(){ 
-System.out.print("Do you want return to find music : (Y/N)");
-                po = sd.nextLine();
-                switch(po){
-                    case "y" : tees();
-                    dfg(); break;
-                    case "n" : break;
-                    default: System.out.println("Try again!" );dfg();
-                
-                      }  
     }
 
-//    public String MyList(){
-//    
-//    
-//    }
-      
+    public void searchMusic(Account user){
+        String song_name;
+        Scanner sn = new Scanner(System.in);
+        int index=-1;
+        boolean inprocess=true;
+        do{
+            System.out.print("Show Music list (L)\tBack(E)"
+                    + "\nSong name : ");
+            song_name = sn.nextLine();
+            boolean notfound=true;
+            if(song_name.equalsIgnoreCase("L")){
+                PlayList();
+                
+            }else if(song_name.equalsIgnoreCase("E")){
+            inprocess =false;
+            
+            }else{
+                for(int i=0;i<musicsList.size()&&notfound;i++){
+                    if(musicsList.get(i).getname().equalsIgnoreCase(song_name)){
+                        System.out.println("Found! :"+musicsList.get(i).getname());
+                        notfound=false;
+                        index=i;
+                    }
 
- public  void musicdemo(){}
-    public  void albumdemo(){}
-    public  void mylistdemo(){}
-    public  void getmoneydemo(){}
-    public  void outdemo(){}
-
-
-
-
-
-
-
-
-
-
+                }
+                if(notfound){
+                    System.out.println("Not found!");
+                }else{
+                  String input;
+                  boolean inplay=true;
+                   while(inplay){
+                    System.out.println("Play(1)\tBuy(B)\tBack to Search(0)");
+                    input=sc.nextLine();
+                    boolean canplay= user.checkList(musicsList.get(index).getname());
+                    switch(input){
+                        case"1":
+                            
+                            if(musicsList.get(index).getbuy()||user.permission&&canplay){
+                                System.out.println("Playing "
+                                        +musicsList.get(index).getname());
+                                
+                            }else{
+                                System.out.println("you have to buy before play");
+                            }
+                         break;
+                        case"B":case"b":
+                            if(user.getPoint()>=musicsList.get(index).getprice()
+                                    &&!musicsList.get(index).getbuy()){
+                                System.out.println("Music "+musicsList.get(index).getname()
+                                        + "\ncost "+musicsList.get(index).getprice()
+                                        + "\nDo you want to buy? (y/n)");
+                                input=sc.nextLine();
+                                if(input.equalsIgnoreCase("y")){
+                                    System.out.println("\nused "
+                                            + musicsList.get(index).getprice()
+                                            + " points."
+                                            + "\nMusic "+musicsList.get(index).getname()
+                                            + " added to your Playlist.");
+                                    user.setPoint(-musicsList.get(index).getprice());
+                                    user.addMusic(musicsList.get(index));
+                                }else
+                                    System.out.println("try again.");
+                            }else if(musicsList.get(index).getbuy())
+                                System.out.println("this's free music");
+                            else
+                                System.out.println("Your money not point");
+                          break;
+                        case"0":inplay=false;
+                         
+                    }
+                   }
+                }
+            }
+        }while(inprocess);
+    
+    
+    }
+    
+   public void PlayList(){
+       for(int i=0;i<musicsList.size();i++){
+       System.out.println(musicsList.get(i).getname());
+       
+   } 
+   }
+    
+  
+    
+    
+    
 }
 

@@ -38,6 +38,13 @@ public abstract class Account {
         this.Money += Money;
     
     }
+    public int getPoint(){
+    
+        return this.point;
+    }
+    public abstract boolean checkList(String music_name);
+    public abstract void showPlayList();
+    public abstract void addMusic(Music music);
 //    public void setmylist(String list){
 //        this.list.equals(list);
 //        

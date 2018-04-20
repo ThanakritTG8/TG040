@@ -11,7 +11,7 @@ class Wallet{
     String id;
     String password;
     String name;
-    String choz;
+    String choz;  
     int Money;
     int point;
     int bath;
@@ -33,7 +33,7 @@ class Wallet{
     }
     
     public int Money(){
-        
+         
         System.out.print("How many do you want to top up>> ");
         Money = entint.nextInt();
         user.Money += Money;

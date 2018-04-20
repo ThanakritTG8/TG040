@@ -26,6 +26,7 @@ public class PSUMusictest {
                         if(menu.Register()){
                             Account user = new User(menu.id,menu.password,menu.name);
                             UserAccess.add(user);
+                            
                         }
                         enter=false;
                     break;
@@ -50,7 +51,7 @@ public class PSUMusictest {
             while(access_success){
                 switch(menu.mainMenu()){
                     
-                    case"1":search.Arraylist();break;
+                    case"1":search.searchMusic(user_access);break;
                     case"2":
                             if(user_access!=null&&user_access.permission){
                                 p.select(user_access);
@@ -62,7 +63,7 @@ public class PSUMusictest {
         
                         case"3":System.out.println("My List");
                         if(user_access!=null&&user_access.permission){
-
+                               user_access.showPlayList();
                         }else
                             System.out.println("You have to register or login.");
 
